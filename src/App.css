@@ -32,7 +32,315 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
+  }
+}
+
+.navbar.navbar-expand-lg {
+  border-bottom: solid 2px;
+  color: hsl(223, 64%, 98%);
+  margin-top: 10px;
+}
+
+.navbar-toggler {
+  border: 0px;
+}
+
+.nav-link {
+  font-size: 16px;
+}
+
+.logo {
+  vertical-align: top;
+}
+
+#dropdown-basic.btn-success {
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: transparent;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+@media (min-width: 993px) {
+  .dropdown {
+    padding: 15px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 992px) {
+  .dropdown {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 577px) {
+  .dropdown {
+    padding: 5px;
+  }
+}
+
+#user {
+  width: 42px;
+  height: 40px;
+}
+
+#navbarDropdownUser {
+  padding-top: 0px;
+}
+
+.dropdown-item {
+  display: flex !important;
+  gap: 10px;
+  padding: 10px;
+}
+
+.delete-div {
+  display: flex;
+  max-width: 190px;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  width: 330px;
+  overflow: scroll;
+  max-height: 200px;
+  /* Establece una altura máxima */
+  overflow-y: auto;
+  /* Agrega desplazamiento vertical */
+}
+
+.dropdown-unit,
+.dropdown-prices {
+  margin-bottom: 0;
+}
+
+.dropdown-divider {
+  overflow: scroll;
+}
+
+.dropdown-title {
+  white-space: pre-line;
+  /* Ajuste de palabras */
+  margin-bottom: 0;
+}
+
+.cart-list {
+  border-bottom: 1px solid lightgray;
+}
+
+.dropdown-menu-right {
+  right: 0 !important;
+  left: auto !important;
+}
+
+.cart {
+  border: 2px hsl(223, 64%, 98%) solid;
+  width: 80%;
+  height: 50px;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: hsl(26, 100%, 55%);
+  margin-top: 2%;
+  color: hsl(223, 64%, 98%);
+}
+
+.empty {
+  padding-left: 16px;
+  padding-right: 16px;
+  color: darkgray;
+}
+
+.btn-cart {
+  display: flex;
+  justify-content: center;
+}
+
+.total-price {
+  text-align: center;
+  color: hsl(38, 87%, 63%);
+  font-weight: bold;
+}
+
+.delete-item {
+  background: none;
+  height: 16px;
+  border: none;
+}
+
+.list-group a {
+  text-decoration: none;
+  color: transparent;
+}
+
+.delete-item img {
+  height: 30px;
+}
+
+.total {
+  margin: 10px;
+}
+
+.form-label {
+  color: rgb(75, 73, 73);
+}
+
+.modal-title {
+  color: hsl(26, 100%, 55%);
+}
+
+.cart-submit {
+  border: 2px hsl(223, 64%, 98%) solid;
+  width: 35%;
+  height: 50px;
+  border-radius: 15px;
+  background-color: hsl(26, 100%, 55%);
+  color: hsl(223, 64%, 98%);
+}
+
+header .container {
+  display: flex;
+  margin: 40px auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .shopping-cart {
+  display: flex;
+}
+
+header .collection {
+  font-size: 16px;
+  text-decoration: none;
+  color: black;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.finalPrice {
+  font-size: 22px;
+}
+
+.oldPrice {
+  margin-left: 8%;
+  color: hsl(220, 14%, 75%);
+  text-decoration: line-through;
+}
+
+.discount {
+  border: 3px hsl(25, 100%, 94%) solid;
+  border-radius: 10px;
+  background-color: hsl(25, 100%, 94%);
+  margin-left: 10px;
+  color: hsl(26, 100%, 55%);
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+@media (max-width: 992px) {
+  .oldPrice {
+    margin-left: auto;
+  }
+
+  .finalPrice {
+    margin-left: 0%;
+  }
+}
+
+.img-fluid {
+  border-radius: 15px;
+}
+
+.prices-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+input {
+  text-align: center;
+  border: 1px solid hsl(223, 64%, 98%);
+  display: flex;
+}
+
+.counter {
+  border: 2px hsla(214, 19%, 93%, 0.943) solid;
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  display: flex;
+  border-radius: 15px;
+  background-color: hsla(214, 19%, 93%, 0.943);
+}
+
+.cart {
+  border: 2px hsl(223, 64%, 98%) solid;
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  display: flex;
+  border-radius: 15px;
+  background-color: hsl(26, 100%, 55%);
+  margin-top: 2%;
+  justify-content: center;
+  color: hsl(223, 64%, 98%);
+}
+
+.plusminus {
+  height: 100%;
+  width: 30%;
+  background-color: hsla(214, 19%, 93%, 0.943);
+  border: none;
+  font-size: 20px;
+  color: hsl(26, 100%, 55%);
+  display: grid;
+  align-content: center;
+}
+
+.form-control {
+  height: 100%;
+  width: 40%;
+  border: none !important;
+  font-size: 20px;
+  background-color: transparent !important;
+}
+
+@media (min-width: 993px) {
+  .counter {
+    border: 2px hsl(223, 64%, 98%) solid;
+    width: 80%;
+    height: 50px;
+    padding: 10px;
+    display: flex;
+    border-radius: 15px;
+    align-items: center;
+    margin-top: 15% !important;
+    margin: auto;
+    justify-content: center;
+  }
+
+  .cart {
+    border: 2px hsl(223, 64%, 98%) solid;
+    width: 80%;
+    height: 50px;
+    padding: 10px;
+    display: flex;
+    border-radius: 15px;
+    align-items: center;
+    margin: auto;
+    margin-top: 3%;
+    justify-content: center;
   }
 }
