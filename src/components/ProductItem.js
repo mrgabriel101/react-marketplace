@@ -2,13 +2,13 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import ProductButton from './ProductButton';
 
-function formatDiscount(discount) {
+const formatDiscount = (discount) => {
   return `${discount * 100}%`;
-}
+};
 
-function calculateFinalPrice(price, discount) {
+const calculateFinalPrice = (price, discount) => {
   return `$${(price - price * discount).toFixed(2)}`;
-}
+};
 
 const ProductItem = ({ product }) => {
   const navigate = useNavigate();
@@ -19,10 +19,10 @@ const ProductItem = ({ product }) => {
 
   return (
     <React.Fragment>
-      <li className="list-group-item" onClick={handleRedirect}>
+      <li className="list-group-item">
         <div className="container-fluid">
           <div className="row">
-            <div className="col-lg-9">
+            <div className="col-lg-9" onClick={handleRedirect}>
               <div className="app-product-info row">
                 <div className="image col-lg-3">
                   <img
@@ -48,7 +48,7 @@ const ProductItem = ({ product }) => {
               </div>
             </div>
             <div className="col-lg-3">
-              <ProductButton />
+              <ProductButton product={product} />
             </div>
           </div>
         </div>

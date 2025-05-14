@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import ProductButton from './ProductButton';
 
 const ProductDetail = () => {
   return (
@@ -19,22 +20,7 @@ const ProductDetail = () => {
                 <p className="oldPrice">$220.00</p>
               </div>
               <div className="col-lg-6">
-                <div className="app-product-btn">
-                  <div className="counter">
-                    <button className="plusminus">-</button>
-                    <input
-                      className="form-control"
-                      placeholder="0"
-                      disabled=""
-                      type="number"
-                      value="0"
-                    />
-                    <button className="plusminus">+</button>
-                  </div>
-                  <div>
-                    <button className="cart">Add To Cart</button>
-                  </div>
-                </div>
+                <ProductButton></ProductButton>
               </div>
             </div>
           </div>
