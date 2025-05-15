@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import ProductButton from './ProductButton';
-import { formatDiscount, formatFinalPrice } from '../priceUtils';
+import { formatDiscount, formatFinalPrice, formatPrice } from '../priceUtils';
 
 const ProductItem = ({ product }) => {
   const navigate = useNavigate();
@@ -35,7 +35,7 @@ const ProductItem = ({ product }) => {
                     <p className="discount">
                       {formatDiscount(product.discount)}
                     </p>
-                    <p className="oldPrice">${product.price.toFixed(2)}</p>
+                    <p className="oldPrice">{formatPrice(product.price)}</p>
                   </div>
                 </div>
               </div>

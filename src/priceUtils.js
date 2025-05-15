@@ -5,7 +5,7 @@ export const formatDiscount = (discount) => {
 export const formatFinalPrice = (price, discount) => {
   return `$${(
     parseInt(price, 10) -
-    parseInt(price, 10) * parseInt(discount, 10)
+    parseInt(price, 10) * parseFloat(discount)
   ).toFixed(2)}`;
 };
 
