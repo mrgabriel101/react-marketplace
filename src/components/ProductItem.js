@@ -1,14 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import ProductButton from './ProductButton';
-
-const formatDiscount = (discount) => {
-  return `${discount * 100}%`;
-};
-
-const calculateFinalPrice = (price, discount) => {
-  return `$${(price - price * discount).toFixed(2)}`;
-};
+import { formatDiscount, formatFinalPrice } from '../priceUtils';
 
 const ProductItem = ({ product }) => {
   const navigate = useNavigate();
@@ -37,7 +30,7 @@ const ProductItem = ({ product }) => {
                 <div className="price col-lg-4">
                   <div className="prices-container">
                     <p className="finalPrice">
-                      {calculateFinalPrice(product.price, product.discount)}
+                      {formatFinalPrice(product.price, product.discount)}
                     </p>
                     <p className="discount">
                       {formatDiscount(product.discount)}

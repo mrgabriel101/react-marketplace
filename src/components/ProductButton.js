@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
+import { useContext } from 'react';
+import { CartItemsContext } from '../context/CartItemsContext';
 
 const ProductButton = ({ product }) => {
+  const { cartItems, addItemToCart, removeItemFromCart, clearCart } =
+    useContext(CartItemsContext);
   const [productQuantityValue, setProductQuantityValue] = useState(0);
   const handleMinus = () => {
-    console.log('minus quantity: ', productQuantityValue, product);
     if (productQuantityValue > 0) {
       setProductQuantityValue(productQuantityValue - 1);
     }
   };
   const handlePlus = () => {
-    console.log('plus quantity: ', productQuantityValue, product);
     if (productQuantityValue >= 0 && product.amount > productQuantityValue) {
       setProductQuantityValue(productQuantityValue + 1);
     }
@@ -17,8 +19,8 @@ const ProductButton = ({ product }) => {
 
   const addToCart = () => {
     if (productQuantityValue > 0) {
-      // Add product to cart logic here
-      console.log(`Added ${productQuantityValue} of ${product.name} to cart`);
+      addItemToCart(product, productQuantityValue);
+      setProductQuantityValue(0);
     }
   };
 

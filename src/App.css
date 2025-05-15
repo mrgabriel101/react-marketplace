@@ -149,6 +149,11 @@
   color: hsl(223, 64%, 98%);
 }
 
+.cart-image {
+  width: 100px;
+  height: 100px;
+}
+
 .empty {
   padding-left: 16px;
   padding-right: 16px;

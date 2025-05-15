@@ -1,19 +1,18 @@
 [
-    {
-      "id": 0,
-      "name": "Fall Limited Edition Sneakers",
-      "price": 220,
-      "discount": 0.5,
-      "img": "image-product-1.jpg",
-      "amount" : 5
-    },
-    {
-      "id": 1,
-      "name": "Fall Limited Edition Sneakers With A Rock",
-      "price": 100,
-      "discount": 0.80,
-      "img": "image-product-3.jpg",
-      "amount" : 10
-    }
-  ]
-  
+  {
+    "id": 0,
+    "name": "Fall Limited Edition Sneakers",
+    "price": 220,
+    "discount": 0.5,
+    "img": "image-product-1.jpg",
+    "amount": 5
+  },
+  {
+    "id": 1,
+    "name": "Fall Limited Edition Sneakers With A Rock",
+    "price": 100,
+    "discount": 0.8,
+    "img": "image-product-3.jpg",
+    "amount": 10
+  }
+]

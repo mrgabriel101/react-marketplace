@@ -1,26 +1,55 @@
-import React, { Fragment } from 'react';
+import React, { useContext, Fragment, useState, useEffect } from 'react';
 import ProductButton from './ProductButton';
+import { ProductsContext } from '../context/ProductsContext';
+import { useParams } from 'react-router-dom';
+import { formatDiscount, formatFinalPrice, formatPrice } from '../priceUtils';
 
 const ProductDetail = () => {
+  const products = useContext(ProductsContext);
+  const { productId } = useParams();
+  const [productInfo, setProductInfo] = useState(null);
+
+  useEffect(() => {
+    setProductInfo(() =>
+      products.find((product) => product.id === parseInt(productId, 10))
+    );
+  }, [products, productId]);
+
+  /*   const [productDetail, setProductDetail] = useState({});
+  setProductDetail(() => {
+    setProductDetail(productInfo);
+  }, [productDetail]);
+ */
   return (
     <React.Fragment>
       <div className="container py-5">
         <div className="row align-items-center">
           <div className="image col-lg-5">
-            <img className="img-fluid" src="/image-product-1.jpg" />
+            {/* {products[0].id} */}
+            {
+              <img
+                className="img-fluid"
+                src={`/${productInfo?.img}`}
+                alt={productInfo?.name}
+              />
+            }
           </div>
           <div className="col-lg-6">
             <div className="title">
-              <h1>Fall Limited Edition Sneakers</h1>
+              <h1>{productInfo?.name}</h1>
             </div>
             <div className="row">
               <div className="col-lg-6 price">
-                <p className="finalPrice">$110.00</p>
-                <p className="discount">0.5</p>
-                <p className="oldPrice">$220.00</p>
+                <p className="finalPrice">
+                  {formatFinalPrice(productInfo?.price, productInfo?.discount)}
+                </p>
+                <p className="discount">
+                  {formatDiscount(productInfo?.discount)}
+                </p>
+                <p className="oldPrice">{formatPrice(productInfo?.price)}</p>
               </div>
               <div className="col-lg-6">
-                <ProductButton></ProductButton>
+                <ProductButton product={productInfo}></ProductButton>
               </div>
             </div>
           </div>

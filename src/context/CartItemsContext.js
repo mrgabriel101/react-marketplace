@@ -1,21 +1,30 @@
-import React, { createContext, useState, useContext, useEffect } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 
 // Create the context
-const CartItemsContext = createContext();
+export const CartItemsContext = createContext();
 
 // Create a provider component
 export const CartItemsProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
-    const storedCartItems = localStorage.getItem('cartItems');
-    if (storedCartItems) {
-      setCartItems(JSON.parse(storedCartItems));
-    }
+    setCartItems([]);
   }, []);
 
-  const addItemToCart = (item) => {
-    setCartItems((prevItems) => [...prevItems, item]);
+  //filter if existand increment quantity
+  const addItemToCart = (item, quantity) => {
+    if (cartItems.some((cartItem) => cartItem.id === item.id)) {
+      setCartItems((prevItems) =>
+        prevItems.map((cartItem) =>
+          cartItem.id === item.id
+            ? { ...cartItem, quantity: cartItem.quantity + quantity }
+            : cartItem
+        )
+      );
+      return;
+    } else {
+      setCartItems([...cartItems, { ...item, quantity }]);
+    }
   };
 
   const removeItemFromCart = (itemId) => {
