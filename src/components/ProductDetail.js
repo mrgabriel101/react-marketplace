@@ -1,4 +1,4 @@
-import React, { useContext, Fragment, useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 import ProductButton from './ProductButton';
 import { ProductsContext } from '../context/ProductsContext';
 import { useParams } from 'react-router-dom';
@@ -7,25 +7,22 @@ import { formatDiscount, formatFinalPrice, formatPrice } from '../priceUtils';
 const ProductDetail = () => {
   const products = useContext(ProductsContext);
   const { productId } = useParams();
-  const [productInfo, setProductInfo] = useState(null);
+  /*   const [productInfo, setProductInfo] = useState(null);
 
   useEffect(() => {
     setProductInfo(() =>
       products.find((product) => product.id === parseInt(productId, 10))
     );
-  }, [products, productId]);
+  }, [products, productId]); */
 
-  /*   const [productDetail, setProductDetail] = useState({});
-  setProductDetail(() => {
-    setProductDetail(productInfo);
-  }, [productDetail]);
- */
+  const productInfo = products.find(
+    (product) => product.id === parseInt(productId, 10)
+  );
   return (
-    <React.Fragment>
+    <>
       <div className="container py-5">
         <div className="row align-items-center">
           <div className="image col-lg-5">
-            {/* {products[0].id} */}
             {
               <img
                 className="img-fluid"
@@ -55,7 +52,7 @@ const ProductDetail = () => {
           </div>
         </div>
       </div>
-    </React.Fragment>
+    </>
   );
 };
 
