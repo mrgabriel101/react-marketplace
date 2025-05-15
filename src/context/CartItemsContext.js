@@ -11,7 +11,6 @@ export const CartItemsProvider = ({ children }) => {
     setCartItems([]);
   }, []);
 
-  //filter if existand increment quantity
   const addItemToCart = (item, quantity) => {
     if (cartItems.some((cartItem) => cartItem.id === item.id)) {
       setCartItems((prevItems) =>
@@ -42,13 +41,6 @@ export const CartItemsProvider = ({ children }) => {
       {children}
     </CartItemsContext.Provider>
   );
-  /*   return (
-    <CartItemsContext.Provider
-      value={{ cartItems, addItemToCart, removeItemFromCart, clearCart }}
-    >
-      {children}
-    </CartItemsContext.Provider>
-  ); */
 };
 
 /* // Custom hook to use the CartItemsContext

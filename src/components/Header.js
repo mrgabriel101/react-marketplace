@@ -5,8 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { CartItemsContext } from '../context/CartItemsContext';
 
 const Header = () => {
-  const { cartItems, addItemToCart, removeItemFromCart, clearCart } =
-    useContext(CartItemsContext);
+  const { cartItems, removeItemFromCart } = useContext(CartItemsContext);
 
   const [total, setTotal] = useState(0);
 

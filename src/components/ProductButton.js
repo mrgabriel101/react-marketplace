@@ -3,8 +3,7 @@ import { useContext } from 'react';
 import { CartItemsContext } from '../context/CartItemsContext';
 
 const ProductButton = ({ product }) => {
-  const { cartItems, addItemToCart, removeItemFromCart, clearCart } =
-    useContext(CartItemsContext);
+  const { addItemToCart } = useContext(CartItemsContext);
   const [productQuantityValue, setProductQuantityValue] = useState(0);
   const handleMinus = () => {
     if (productQuantityValue > 0) {
